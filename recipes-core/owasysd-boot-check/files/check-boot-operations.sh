@@ -30,13 +30,13 @@ check_memory_map()
 {
    mount | grep -q 'ubi0:device'
    if [ $? -ne 0 ]; then
-      logger "device partition not mounted!"
+      logger "Boot Check ERROR: device partition not mounted!"
       exit 1
    fi
 
    mount | grep -q '/data'
    if [ $? -ne 0 ]; then
-      logger "data partition not mounted!"
+      logger "Boot Check ERROR: data partition not mounted!"
       exit 1
    fi
 
@@ -59,19 +59,19 @@ check_loaded_kernel_modules()
 
    lsmod | grep -q 'owa5x_gpio'
    if [ $? -ne 0 ]; then
-      logger "Owasys kernel module not present!"
+      logger "Boot Check ERROR: Owasys kernel module not present!"
       exit 1
    fi
 
    lsmod | grep -q 'mcp251xfd'
    if [ $? -ne 0 ]; then
-      logger "CANFD to SPI kernel module not present!"
+      logger "Boot Check ERROR: CANFD to SPI kernel module not present!"
       exit 1
    fi
 
    lsmod | grep -q 'st_lsm6dsx_spi'
    if [ $? -ne 0 ]; then
-      logger "6 axis accelerometer kernel module not present!"
+      logger "Boot Check ERROR: 6 axis accelerometer kernel module not present!"
       exit 1
    fi
 
