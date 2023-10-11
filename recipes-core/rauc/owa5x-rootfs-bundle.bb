@@ -56,6 +56,6 @@ do_deploy() {
 	fi
 
     if [ ${UPLOAD_BUNDLE} -eq 1 ]; then
-        ${WORKDIR}/upload-bundle -f ${DEPLOYDIR}/${BUNDLE_LINK_NAME}${BUNDLE_EXTENSION} -u ${ODM_USER} -p ${ODM_PASS} -o ${MACHINE} -c "${ODM_DESCRIPTION}" -t "${OTA_TYPE}"
+        ${WORKDIR}/upload-bundle -f ${DEPLOYDIR}/${BUNDLE_LINK_NAME}${BUNDLE_EXTENSION} -u ${ODM_USER} -p ${ODM_PASS} -o ${MACHINE} -c "${ODM_APP_DESCRIPTION}" -t "${OTA_TYPE}"
     fi
 }

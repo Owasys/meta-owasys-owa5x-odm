@@ -144,7 +144,7 @@ main() {
         mount_other_partition
     fi
 
-    if [ -f "$UBOOT" ]; then
+    if [ -f "$CURRENT_UBOOT" ] && [ -f "$NEXT_UBOOT" ]; then
         echo ""
         echo "Comparing u-boot md5..."
         echo ""
