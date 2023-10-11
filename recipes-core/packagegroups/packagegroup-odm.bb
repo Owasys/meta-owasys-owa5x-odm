@@ -8,11 +8,10 @@ PACKAGES = " packagegroup-odm \
 "
 RDEPENDS:${PN} = "\
     paho-mqtt-c \
-    polluxc-mqtt \
+    owasys-polluxc-mqtt \
     rauc \
     casync \
     owasysd-boot-check \
     odm-agent \
     odm-remote-shell \
-    owasysd-measured-boot \
 "
